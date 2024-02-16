@@ -1,11 +1,11 @@
 <nav>
     <img src="{{url('images/itsfree_header.gif')}}" alt="">
     <div class="nav">
-        <h1>PELICULAS ONLINE</h1>
+       <a style="text-decoration: none; color:black" href="{{route('movie.index')}}"><h1>PELÍCULAS ONLINE</h1></a>
 
         <div class="botones">
-            <div class="boton">Últimas novedades</div>
-            <div class="boton">Próximos estrenos</div>
+            <a style="text-decoration: none" href="{{route('movie.showNovedades')}}"><div class="boton">Últimas novedades</div></a>
+            <a style="text-decoration: none" href="{{route('movie.showEstrenos')}}"><div class="boton">Próximos estrenos</div></a>
         </div>
 
         <div class="inputs">
@@ -23,16 +23,46 @@
 
             <label for="genero">género:</label>
             <div class="botones_generos">
-                <div class="boton_genero">Acción</div>
-                <div class="boton_genero">Aventura</div>
-                <div class="boton_genero">Ciencia ficción</div>
-                <div class="boton_genero">Comedia</div>
-                <div class="boton_genero">Drama</div>
-                <div class="boton_genero">Historia</div>
-                <div class="boton_genero">Fantasía</div>
-                <div class="boton_genero">Animación</div>
-                <div class="boton_genero">Romance</div>
-                <div class="boton_genero">Terror</div>
+                <a href="{{ route('movie.genero', 'Accion') }}" style="text-decoration: none">
+                    <div class="boton_genero">Acción</div>
+                </a>
+
+                <a href="{{ route('movie.genero', 'Aventura') }}" style="text-decoration: none">
+                    <div class="boton_genero">Aventura</div>
+                </a>
+
+                <a href="{{ route('movie.genero', 'Ciencia-ficcion') }}" style="text-decoration: none">
+                    <div class="boton_genero">Ciencia ficción</div>
+                </a>
+
+                <a href="{{ route('movie.genero', 'Comedia') }}" style="text-decoration: none">
+                    <div class="boton_genero">Comedia</div>
+                </a>
+
+                <a href="{{ route('movie.genero', 'Drama') }}" style="text-decoration: none">
+                    <div class="boton_genero">Drama</div>
+                </a>
+
+                <a href="{{ route('movie.genero', 'Historia') }}" style="text-decoration: none">
+                    <div class="boton_genero">Historia</div>
+                </a>
+
+                <a href="{{ route('movie.genero', 'Fantasia') }}" style="text-decoration: none">
+                    <div class="boton_genero">Fantasía</div>
+                </a>
+
+                <a href="{{ route('movie.genero', 'Animacion') }}" style="text-decoration: none">
+                    <div class="boton_genero">Animación</div>
+                </a>
+
+                <a href="{{ route('movie.genero', 'Romance') }}" style="text-decoration: none">
+                    <div class="boton_genero">Romance</div>
+                </a>
+
+                <a href="{{ route('movie.genero', 'Terror') }}" style="text-decoration: none">
+                    <div class="boton_genero">Terror</div>
+                </a>
+
             </div>
         </div>
     </div>

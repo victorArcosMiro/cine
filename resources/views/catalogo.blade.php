@@ -1,5 +1,4 @@
 <div class="catalogo">
-    <h1>CATÁLOGO DE PELÍCULAS</h1>
     <table>
         @foreach ($movieList->chunk(3) as $fila)
             <tr>
@@ -9,6 +8,4 @@
             </tr>
         @endforeach
     </table>
-
-
 </div>

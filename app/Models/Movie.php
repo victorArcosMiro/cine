@@ -3,6 +3,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Movies;
+use Illuminate\Support\Carbon;
 
 class Movie extends Model
 {
@@ -38,4 +40,6 @@ class Movie extends Model
         $movie = Movie::find($id);
         return view('movie.showMovie', compact('movie'));
     }
+
+
 }

@@ -19,19 +19,14 @@ use App\Http\Controllers\GenreController;
 
 
 
-Route::get('/', [MovieController::class, 'index']);
+Route::get('/', [MovieController::class, 'index'])->name('movie.index');
 Route::get('/movies/{id}', [MovieController::class, 'show'])->name('movie.show');
 
-Route::get('/directors', [DirectorController::class, 'index']);
-Route::get('/directors/{id}', [DirectorController::class, 'show']);
+Route::get('/novedades', [MovieController::class, 'showNovedades'])->name('movie.showNovedades');
 
-Route::get('/lead-actors', [LeadActorController::class, 'index']);
-Route::get('/lead-actors/{id}', [LeadActorController::class, 'show']);
+Route::get('/proximos-estrenos', [MovieController::class, 'showEstrenos'])->name('movie.showEstrenos');
 
-Route::get('/writers', [WriterController::class, 'index']);
-Route::get('/writers/{id}', [WriterController::class, 'show']);
+Route::get('/genero/{genero}', [MovieController::class, 'showPorGenero'])->name('movie.genero');
 
-Route::get('/genres', [GenreController::class, 'index']);
-Route::get('/genres/{id}', [GenreController::class, 'show']);
 
-Route::get('/movies/{id}', [MovieController::class, 'show'])->name('movie.show');
+

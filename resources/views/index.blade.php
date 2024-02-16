@@ -1,6 +1,8 @@
 @extends('master')
 @section('title', 'Listado de contactos')
-@section('main_title', 'CATALOGO DE PELICULAS')
+@section('main_title')
+    {{$title}}
+@endsection
 
 @section('catalogo')
 <table>
