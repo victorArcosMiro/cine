@@ -28,5 +28,9 @@ Route::get('/proximos-estrenos', [MovieController::class, 'showEstrenos'])->name
 
 Route::get('/genero/{genero}', [MovieController::class, 'showPorGenero'])->name('movie.genero');
 
+Route::get('/buscar-peliculas-titulo', [MovieController::class, 'buscarPeliculas_titulo'])->name('movie.buscarPeliculaTitulo');
+
+Route::get('/buscar-peliculas-director', [MovieController::class, 'buscarPeliculas_director'])->name('movie.buscarPeliculaDirector');
+
 
 

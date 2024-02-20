@@ -9,17 +9,22 @@
         </div>
 
         <div class="inputs">
-            <label for="titulo">titulo:</label>
-            <div class="input">
-                <input type="text" name="titulo">
-                <img src="{{url('images/lupa.png')}}" alt="" class="lupa">
-            </div>
+           <form action="{{ route('movie.buscarPeliculaTitulo') }}" method="GET">
+                <label for="titulo">titulo:</label>
+                <div class="input">
+                    <input type="text" name="titulo" id="titulo">
 
-            <label for="director">director:</label>
-            <div class="input">
-                <input type="text" name="director">
-                <img src="{{url('images/lupa.png')}}" alt="" class="lupa">
-            </div>
+                    <button style="background-color: gray;all: unset;" type="submit"> <img src="{{url('images/lupa.png')}}" alt="" class="lupa"></button>
+                </div>
+            </form>
+
+            <form action="{{ route('movie.buscarPeliculaDirector') }}" method="get">
+                <label for="director">director:</label>
+                <div class="input">
+                    <input type="text" name="director" id="director">
+                    <button style="background-color: gray;all: unset;" type="submit"> <img src="{{url('images/lupa.png')}}" alt="" class="lupa"></button>
+                </div>
+            </form>
 
             <label for="genero">género:</label>
             <div class="botones_generos">

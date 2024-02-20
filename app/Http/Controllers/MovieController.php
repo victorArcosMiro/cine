@@ -41,6 +41,24 @@ class MovieController extends Controller
 
     return view('index', ['movieList'=>$movieList, 'title'=>$genero]);
     }
+    public function buscarPeliculas_titulo(Request $request)
+{
+    $titulo = $request->input('titulo');
+
+    $movieList = Movie::where('title', 'like', '%' . $titulo . '%')->get();
+
+    return view('index', ['movieList'=>$movieList, 'title'=>"Busqueda por titulo:\"$titulo\""]);
+}
+public function buscarPeliculas_director(Request $request)
+{
+    $nombreDirector = $request->input('director');
+
+    $peliculas = Movie::whereHas('director', function ($query) use ($nombreDirector) {
+        $query->where('name', 'like', '%' . $nombreDirector . '%');
+    })->get();
+
+    return view('index', ['movieList' => $peliculas, 'title' => "Búsqueda por director: '$nombreDirector'"]);
+}
     public function create() {
         return view('form');
     }
