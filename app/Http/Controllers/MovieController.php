@@ -53,12 +53,20 @@ public function buscarPeliculas_director(Request $request)
 {
     $nombreDirector = $request->input('director');
 
-    $peliculas = Movie::whereHas('director', function ($query) use ($nombreDirector) {
-        $query->where('name', 'like', '%' . $nombreDirector . '%');
+    $movieList = Movie::whereHas('director', function ($query) use ($nombreDirector) {
+        $query->where(function ($subQuery) use ($nombreDirector) {
+            // Obtener al menos 3 caracteres coincidentes en el mismo orden
+            $subQuery->whereRaw('CONCAT(name, " ", surname) LIKE ?', ['%' . $nombreDirector . '%'])
+                      ->orWhere('name', 'like', '%' . $nombreDirector . '%')
+                      ->orWhere('surname', 'like', '%' . $nombreDirector . '%');
+        });
     })->get();
 
-    return view('index', ['movieList' => $peliculas, 'title' => "Búsqueda por director: '$nombreDirector'"]);
+    return view('index', ['movieList' => $movieList, 'title' => "Búsqueda por director: \"$nombreDirector\""]);
 }
+
+
+
     public function create() {
         return view('form');
     }
