@@ -133,17 +133,31 @@ td a img{
     width: 80%;
 }
 .top{
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 80%;
     justify-content: space-around;
 }
-
+label, h1{
+    font-family: 'Georgia', serif;
+}
+label{
+    font-size: 20px;
+}
 .top .info{
     display: flex;
     align-items:start;
     justify-content: center;
     flex-direction: column;
+    font-size: x-large;
+}
+h1{
+    font-size: 40px;
+}
+
+.synopsis{
+    font-size: x-large;
 }
 
 form{
