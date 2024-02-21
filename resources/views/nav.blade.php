@@ -36,7 +36,7 @@
                     <div class="boton_genero">Aventura</div>
                 </a>
 
-                <a href="{{ route('movie.genero', 'Ciencia-ficcion') }}" style="text-decoration: none">
+                <a href="{{ route('movie.genero', 'Ciencia ficcion') }}" style="text-decoration: none">
                     <div class="boton_genero">Ciencia ficción</div>
                 </a>
 

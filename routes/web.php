@@ -20,6 +20,7 @@ use App\Http\Controllers\GenreController;
 
 
 Route::get('/', [MovieController::class, 'index'])->name('movie.index');
+
 Route::get('/movies/{id}', [MovieController::class, 'show'])->name('movie.show');
 
 Route::get('/novedades', [MovieController::class, 'showNovedades'])->name('movie.showNovedades');
